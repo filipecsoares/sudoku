@@ -1,13 +1,18 @@
 package com.fs.sudoku;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.Map;
+import java.util.stream.Stream;
 
-@SpringBootApplication
+import static java.util.stream.Collectors.toMap;
+
 public class SudokuApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SudokuApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        Map<String, String> positions = Stream.of(args)
+                .collect(toMap(
+                        k -> k.split(";")[0],
+                        v -> v.split(";")[1]
+                ));
+        PlayGame playGame = new PlayGame(positions);
+        playGame.run();
+    }
 }
