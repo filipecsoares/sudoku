@@ -58,5 +58,30 @@ If no arguments are provided, the game will start with an empty or default board
 - The initial board configuration can be customized in the code. By default, the game starts with an empty or pre-defined board.
 - This project is for educational purposes and is not intended for production use.
 
+## Graphical User Interface (UI)
+
+In addition to the console version, this project includes a Swing-based graphical interface for playing Sudoku.
+
+### How to Run the UI
+
+1. **Build the project** (if not already built):
+   ```sh
+   ./mvnw clean package
+   ```
+2. **Run the UI application:**
+   ```sh
+   java -cp target/classes com.fs.sudoku.MainUIApplication
+   ```
+   - This will launch a windowed Sudoku game with a pre-filled board if no arguments are provided.
+   - You can also pass arguments in the same format as the console version to customize the initial board.
+
+### UI Features
+- Clickable, editable cells for user input (except fixed cells)
+- Bold, centered numbers for clarity
+- Red highlighting for incorrect entries
+- Thick borders to visually separate 3x3 squares
+- Status label to indicate progress or errors
+- Buttons to check the board or reset it
+
 ## License
 This project is for study and personal use only.
